@@ -1,0 +1,9 @@
+Repository: https://gitlab.com/irill/cudf.git
+Repository-Browse: https://gitlab.com/irill/cudf/-/tree/master
+Bug-Database: https://gitlab.com/irill/cudf/-/issues
+Funding: European Union, project Mancoosi (FP7 ICT 214898)
+Reference:
+ - Author: Ralf Treinen and Stefano Zacchiroli
+ - Title: Expressing Advanced User Preferences in Component Installation
+ - Booktitle: International Workshop on Open Component Ecosystem
+ - Year: 2009

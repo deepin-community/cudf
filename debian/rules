@@ -1,0 +1,25 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+export DH_VERBOSE=1
+
+include /usr/share/ocaml/ocamlvars.mk
+DESTDIR := $(CURDIR)/debian/tmp
+export OCAMLFIND_DESTDIR := $(DESTDIR)/$(OCAML_STDLIB_DIR)
+
+%:
+	dh $@ --with ocaml --no-parallel
+
+override_dh_auto_build:
+ifeq ($(OCAML_HAVE_OCAMLOPT),yes)
+	$(MAKE) all c-lib opt c-lib-opt
+else
+	$(MAKE) all c-lib
+endif
+
+override_dh_auto_install:
+	$(MAKE) install DESTDIR=$(DESTDIR)
+	dh_installexamples
+
+override_dh_dwz:
+	# do nothing

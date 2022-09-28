@@ -1,0 +1,188 @@
+cudf (0.9-2) unstable; urgency=medium
+
+  * debian/watch:
+    - version 4
+    - new git repository at gitlab
+  * Standards-version 4.6.0 (no change)
+  * Add debian/upstream/metadata
+  * Removed build-depedency on camlp4 which, according to ChangeLog, is no
+    longer needed.
+
+ -- Ralf Treinen <treinen@debian.org>  Wed, 27 Oct 2021 20:50:51 +0200
+
+cudf (0.9-1) unstable; urgency=medium
+
+  * New upstream release.
+  * Removed zack from Uploaders on his request
+  * Debhelper compatibility level 13
+  * Standards-Version 4.5.0 (no change)
+  * Set Rules-Requires-Root=no
+
+ -- Ralf Treinen <treinen@debian.org>  Fri, 09 Oct 2020 01:43:49 +0200
+
+cudf (0.7-5) unstable; urgency=medium
+
+  * Put back build-dependency on camlp4
+
+ -- Ralf Treinen <treinen@debian.org>  Sat, 27 Jul 2019 10:33:10 -0300
+
+cudf (0.7-4) unstable; urgency=medium
+
+  [ Stéphane Glondu ]
+  * debian/control: remove Build-Depends on camlp4, no longer needed
+  * Update Vcs-* fields to salsa
+
+  [ Ralf Treinen ]
+  * Build-depend on debhelper-compat, remove file debian-compat.
+  * Debhelper compatibility level 12 (no change)
+  * Convert debian/rules to dh, drop build-dependency on cdbs.
+  * debian/copyright: rename license
+  * Standards-Version 4.4.0:
+    - debian/copyright format header: use https
+  * Add package tests cudf-check-universe and api-ocaml.
+
+ -- Ralf Treinen <treinen@debian.org>  Fri, 26 Jul 2019 16:18:27 -0300
+
+cudf (0.7-3) unstable; urgency=medium
+
+  [ Stéphane Glondu ]
+  * Team upload
+  * Add ocamlbuild to Build-Depends
+
+  [ Dimitri John Ledkov ]
+  * Add ocaml-base-nox dependency to cudf-tools, otherwise results in
+    aspcud autopkgtest failure when invoking cudf-check without interpret
+    available.
+
+ -- Stéphane Glondu <glondu@debian.org>  Wed, 19 Jul 2017 19:27:18 +0200
+
+cudf (0.7-2) unstable; urgency=medium
+
+  * upload to unstable
+
+ -- Stefano Zacchiroli <zack@debian.org>  Tue, 27 May 2014 10:15:18 +0200
+
+cudf (0.7-1) experimental; urgency=medium
+
+  * new upstream release
+    - include new upstream cudf-check manpage with exit code information
+      (Closes: #730529)
+  * drop no longer needed Debian manpage from the package
+  * add Build-Depends on perl (just in case), it is needed for pod2man
+  * bump Standards-Version to 3.9.5 (no change)
+
+ -- Stefano Zacchiroli <zack@debian.org>  Tue, 29 Apr 2014 14:55:42 -0400
+
+cudf (0.6.3-2) unstable; urgency=low
+
+  * update debian/watch (on INRIA forge now)
+  * standards-version 3.9.4 (no change)
+
+ -- Ralf Treinen <treinen@debian.org>  Fri, 10 May 2013 18:31:39 +0200
+
+cudf (0.6.3-1) experimental; urgency=low
+
+  * New upstream release
+  * debian/control: bump Standards-Version to 3.9.1 (no changes needed)
+  * debian/copyright: port syntax to machine-readable debian/copyright
+    specification, version 1.0
+
+ -- Stefano Zacchiroli <zack@debian.org>  Fri, 03 Aug 2012 12:54:43 +0200
+
+cudf (0.6.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Stefano Zacchiroli <zack@debian.org>  Thu, 15 Sep 2011 14:35:57 +0200
+
+cudf (0.6-1) unstable; urgency=low
+
+  * New upstream release; highlights:
+    - speed improvements in the pretty printing engine and in cudf-check
+    - fixes in the pretty printing engine
+  * debian/patches/
+    - drop link-caml_hash_variant-with-ldl.patch (integrated upstream)
+
+ -- Stefano Zacchiroli <zack@debian.org>  Wed, 01 Jun 2011 09:55:06 +0200
+
+cudf (0.5.99-2) unstable; urgency=low
+
+  [ Ralf Treinen ]
+  * Add debian/watch.
+  * Switched to debian source version "3.0 (quilt)" (no change apart from
+    adding debian/source)
+  * Put maintainer=debian-ocaml-maintainers, Zack and me as uploaders,
+    with the previous maintainer's blessing.
+
+  [ Stefano Zacchiroli ]
+  * uploading to unstable
+  * debian/control: bump Standards-Version to 3.9.2 (no changes needed)
+  * debian/patches/
+    - add patch link-caml_hash_variant-with-ldl.patch to avoid link
+      failure with recent binutils (and on non-Linux systems). Thanks
+      Cyril Brulebois for the patch! (Closes: #602489)
+
+ -- Stefano Zacchiroli <zack@debian.org>  Fri, 06 May 2011 21:21:03 +0200
+
+cudf (0.5.99-1) experimental; urgency=low
+
+  * New upstream release
+  * debian/*.ocamldoc: pass -package extlib, as extlib types are now used
+    in libcudf interface
+  * move packaging (i.e. debian/ dir) to git.d.o
+  * debian/control
+    - update Vcs-* fields to reflect new packaging location
+    - bump Standards-Version to 3.9.1 (no changes needed)
+  * debian/gbp.conf: add configuration file for git-buildpackage
+
+ -- Stefano Zacchiroli <zack@debian.org>  Thu, 04 Nov 2010 16:59:35 +0100
+
+cudf (0.5.98-1) experimental; urgency=low
+
+  * New upstream release
+  * First upload to the Debian archive
+  * debian/control
+    - add missing build-dep on camlp4
+    - bump Standards-Version (no changes needed)
+  * debian/cudf-check.1: provide sensible whatis information
+  * debian/copyright: bump copyright year to include 2010
+
+ -- Stefano Zacchiroli <zack@debian.org>  Fri, 25 Jun 2010 16:51:27 +0200
+
+cudf (0.5.97-1) mancoosi; urgency=low
+
+  * New upstream release
+
+ -- Stefano Zacchiroli <zack@debian.org>  Thu, 03 Jun 2010 16:42:23 +0200
+
+cudf (0.5.96-1) mancoosi; urgency=low
+
+  * New upstream release
+  * debian/control: update Vcs-* fields to reflect upstream SVN change
+
+ -- Stefano Zacchiroli <zack@debian.org>  Tue, 01 Jun 2010 15:56:54 +0200
+
+cudf (0.5.94-1) mancoosi; urgency=low
+
+  * New upstream release
+  * Use upstream make to install C bindings
+  * debian/control: point Homepage to CUDF homepage
+
+ -- Stefano Zacchiroli <zack@debian.org>  Fri, 18 Dec 2009 11:37:40 +0100
+
+cudf (0.5.92-1) mancoosi; urgency=low
+
+  * New upstream release
+  * Port packaging to recent dh-ocaml (w/ ABI-based dependencies)
+  * debian/control:
+    - bump Standards-Version to 3.8.3 (no changes needed)
+    - drop deps on libpcre-ocaml{,-dev} (no longer needed)
+  * Enable generation of ocamldoc HTML API reference
+
+ -- Stefano Zacchiroli <zack@debian.org>  Sat, 21 Nov 2009 19:38:54 +0100
+
+cudf (0.4-1) mancoosi; urgency=low
+
+  * First public release.
+
+ -- Stefano Zacchiroli <zack@debian.org>  Fri, 17 Apr 2009 12:00:51 +0200

@@ -1,0 +1,21 @@
+#!/bin/sh -e
+
+indir=${PWD}/debian/tests/
+exdir=${PWD}/examples
+outdir=${AUTOPKGTEST_ARTIFACTS-/tmp/cudf-package-test}/ocaml-api
+mkdir -p ${outdir}
+cd ${outdir}
+cp ${indir}/parse.ml ${indir}/_tags .
+
+echo "* Compile to bytecode"
+ocamlbuild -use-ocamlfind parse.byte
+echo "* Run the bytecode"
+./parse.byte ${exdir}/universe.cudf
+
+if [ -x /usr/bin/ocamlopt ]; then
+    echo "* Compile to native code"
+    ocamlbuild -use-ocamlfind parse.native
+    echo "* Run the native code"
+    ./parse.native ${exdir}/universe.cudf
+fi
+    

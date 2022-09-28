@@ -1,0 +1,5 @@
+Tests: cudf-check-universe
+Depends: cudf-tools
+
+Tests: api-ocaml
+Depends: libcudf-ocaml-dev, ocaml-nox, ocaml-findlib, ocamlbuild

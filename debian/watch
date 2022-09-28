@@ -1,0 +1,2 @@
+version=4
+https://gitlab.com/irill/cudf/tags?sort=updated_desc .*/archive/v[0-9.]+/cudf-v([0-9.]+)\.tar\.gz
